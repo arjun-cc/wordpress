@@ -11,7 +11,7 @@ build:
   image_template: wordpress-5.5
 
 deploy:
-  context: alpha/DEV
+  context: arjun-cc/DEV
   replicas: 1
   type: statefulset
   port:
@@ -30,7 +30,7 @@ volumes:
 properties:
   ENABLE_HA: "no"  
   #if HA is disabled
-  MYSQL_HOST : "mariadb-master-10-4:3306"
+  MYSQL_HOST : "mysql-5-7:3306"
   #if HA is enabled
   #MYSQL_MASTER_HOST : "mariadb-master-10-4:3306"
   #MYSQL_SLAVE_HOST : "mariadb-slave-10-4:3306"
@@ -39,8 +39,8 @@ properties:
   ADMIN_USER: wpadmin
   ADMIN_EMAIL: appzdev@cloudbourne.co
   SITE_TITLE: "Wordpress AppZ Workshop Demo"
-  MYSQL_PASSWORD:
+  MYSQL_ROOT_PASSWORD:
      vault: MYSQL_PASSWORD_KEY
   #Generate hash at https://ehikioya.com/wordpress-password-hash-generator/
-  ADMIN_PASSWORD_HASH: $P$BAeYgHEtHyCT335q2Iya9JL4CtKHc1/
+  ADMIN_PASSWORD_HASH: $P$BfToabMame3OPPzCz4lULrAY3qxXNt0
   revision : 82
