@@ -28,14 +28,16 @@ volumes:
   size: 5Gi 
   
 properties:
-  ENABLE_HA: "no"
   MYSQL_HOST: "mysql-5-7:3306"
   MYSQL_USER: wordpress
   MYSQL_DATABASE: wordpress
 
-  MYSQL_ROOT_PASSWORD:
-    vault: MYSQL_ROOT_PASSWORD_KEY
+  MYSQL_PASSWORD:
+    vault: MYSQL_WORDPRESS_PASSWORD
 
   MYSQL_WORDPRESS_PASSWORD:
     vault: MYSQL_WORDPRESS_PASSWORD
+
+  MYSQL_ROOT_PASSWORD:
+    vault: MYSQL_ROOT_PASSWORD_KEY
   revision : 82
