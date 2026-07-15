@@ -28,6 +28,7 @@ volumes:
   size: 5Gi 
   
 properties:
+  ENABLE_HA: "no"
   MYSQL_HOST: "mysql-5-7:3306"
   MYSQL_USER: wordpress
   MYSQL_DATABASE: wordpress
